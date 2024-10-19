@@ -77,7 +77,6 @@ public class PackageFileMover : AssetPostprocessor
 
 
 
-    [MenuItem("Tools/Move Files to Assets Folder")]
     // Funcția care șterge vechile fișiere și le înlocuiește cu noile fișiere din pachet
     static void ReplaceOldFilesInAssetsFolder()
     {
