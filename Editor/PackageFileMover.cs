@@ -14,6 +14,8 @@ public class PackageFileMover : AssetPostprocessor
 
     static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
     {
+        RemoveDefineSymbol();
+
         // Verifică dacă pachetul specific a fost importat
         foreach (string asset in importedAssets)
         {
@@ -47,6 +49,27 @@ public class PackageFileMover : AssetPostprocessor
             else
             {
                 Debug.LogWarning($"Scripting define symbol {defineSymbol} already exists.");
+            }
+        }
+
+        void RemoveDefineSymbol()
+        {
+            string defineSymbol = SYMBOL_NAME;
+
+            // Obține simbolurile curente
+            string currentDefines = PlayerSettings.GetScriptingDefineSymbolsForGroup(BuildTargetGroup.Standalone);
+
+            // Dacă simbolul există, îl eliminăm
+            if (currentDefines.Contains(defineSymbol))
+            {
+                // Elimină simbolul și actualizează lista
+                currentDefines = currentDefines.Replace(defineSymbol, "").Replace(";;", ";").Trim(';');
+                PlayerSettings.SetScriptingDefineSymbolsForGroup(BuildTargetGroup.Standalone, currentDefines);
+                Debug.Log($"Removed scripting define symbol: {defineSymbol}");
+            }
+            else
+            {
+                Debug.LogWarning($"Scripting define symbol {defineSymbol} does not exist.");
             }
         }
     }
