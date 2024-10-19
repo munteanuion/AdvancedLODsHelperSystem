@@ -73,12 +73,22 @@ public class PackageFileMover : AssetPostprocessor
 
         foreach (string file in allFiles)
         {
-            string fileName = Path.GetFileName(file);
-            string destPath = Path.Combine(destinationFolder, fileName);
+            // Obține calea relativă a fișierului față de folderul sursă
+            string relativePath = file.Substring(packageFolder.Length + 1); // +1 pentru a omite '\\'
+
+            // Creează calea destinație, păstrând structura folderului
+            string destPath = Path.Combine(destinationFolder, relativePath);
+            string destDir = Path.GetDirectoryName(destPath); // Obține directorul destinație
+
+            // Verifică dacă directorul destinație există, dacă nu, creează-l
+            if (!Directory.Exists(destDir))
+            {
+                Directory.CreateDirectory(destDir);
+            }
 
             // Copiază fișierul și suprascrie dacă există deja
             File.Copy(file, destPath, true);
-            Debug.Log($"Moved file: {fileName}");
+            Debug.Log($"Moved file: {relativePath}");
         }
 
         // Reîmprospătează Asset Database
