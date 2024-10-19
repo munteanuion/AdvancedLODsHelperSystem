@@ -1,3 +1,5 @@
+#if ADVANCED_LODS_HELPER_SYSTEM
+
 using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEditor;
@@ -142,3 +144,5 @@ public class MeshCombinerEditor : Editor
 		return folderPath;
 	}
 }
+
+#endif

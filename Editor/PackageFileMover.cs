@@ -1,5 +1,6 @@
 ﻿using UnityEditor;
 using System.IO;
+using UnityEngine;
 
 public class PackageFileMover : AssetPostprocessor
 {
@@ -16,6 +17,32 @@ public class PackageFileMover : AssetPostprocessor
             {
                 ReplaceOldFilesInAssetsFolder();
                 break;
+            }
+        }
+
+        AddDefineSymbol();
+
+        void AddDefineSymbol()
+        {
+            // Define simbolul pe care vrei să-l adaugi
+            string defineSymbol = "ADVANCED_LODS_HELPER_SYSTEM";
+
+            // Obține simbolurile de define curente
+            string currentDefines = PlayerSettings.GetScriptingDefineSymbolsForGroup(BuildTargetGroup.Standalone);
+
+            // Verifică dacă simbolul există deja pentru a evita duplicarea
+            if (!currentDefines.Contains(defineSymbol))
+            {
+                // Adaugă noul define symbol la lista curentă
+                currentDefines += ";" + defineSymbol;
+
+                // Setează simbolurile noi
+                PlayerSettings.SetScriptingDefineSymbolsForGroup(BuildTargetGroup.Standalone, currentDefines);
+                Debug.Log($"Added scripting define symbol: {defineSymbol}");
+            }
+            else
+            {
+                Debug.LogWarning($"Scripting define symbol {defineSymbol} already exists.");
             }
         }
     }

@@ -1,7 +1,7 @@
 ﻿//////////////////////////////////////////////////////
 // Copyright (c) BrainFailProductions
 //////////////////////////////////////////////////////
-
+#if ADVANCED_LODS_HELPER_SYSTEM
 
 using System.Collections.Generic;
 using UnityEngine;
@@ -197,7 +197,7 @@ namespace BrainFailProductions.PolyFew
                 }
                 
 
-                #region Restoring persistent data 
+#region Restoring persistent data 
 
                 UtilityServices.AutoLODSavePath = EditorPrefs.HasKey("autoLODSavePath") ? EditorPrefs.GetString("autoLODSavePath") : SetAndReturnStringPref("autoLODSavePath", "");
                 UtilityServices.BatchFewSavePath = EditorPrefs.HasKey("batchFewSavePath") ? EditorPrefs.GetString("batchFewSavePath") : SetAndReturnStringPref("batchFewSavePath", "");
@@ -6981,14 +6981,14 @@ namespace BrainFailProductions.PolyFew
 
             static void OnWillCreateAsset(string assetPath)
             {
-                #if UNITY_2018_1_OR_NEWER
+#if UNITY_2018_1_OR_NEWER
                 string extension = Path.GetExtension(assetPath);
             
                 // We only care about preset files
                 if (extension != ".preset") { return; }
 
                 NormalizePolyFewPreset(assetPath, Selection.activeGameObject.GetComponent<PolyFew>());
-                #endif
+#endif
             }
         }
 
@@ -7168,3 +7168,5 @@ namespace BrainFailProductions.PolyFew
 
 
 }
+
+#endif
