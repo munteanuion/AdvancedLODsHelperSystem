@@ -46,12 +46,16 @@ public class PackageFileMover : AssetPostprocessor
             }
         }
     }
+
+
+
+
     [MenuItem("Tools/Move Files to Assets Folder")]
     // Funcția care șterge vechile fișiere și le înlocuiește cu noile fișiere din pachet
     static void ReplaceOldFilesInAssetsFolder()
     {
-        string packageFolder = $"Library/PackageCache/{PACKAGE_NAME}/Runtime/AdvancedLODsHelperSystem"; // Calea din pachet
-        string destinationFolder = "Assets/Plugins/AdvancedLODsHelperSystem"; // Calea în Assets
+        string packageFolder = $"Library\\PackageCache\\{PACKAGE_NAME}\\Runtime\\AdvancedLODsHelperSystem"; // Calea din pachet
+        string destinationFolder = "Assets\\Plugins\\AdvancedLODsHelperSystem"; // Calea în Assets
 
         // Dacă există fișiere în folderul de destinație, le șterge
         if (Directory.Exists(destinationFolder))
@@ -98,6 +102,19 @@ public class PackageFileMover : AssetPostprocessor
             {
                 Debug.LogWarning($"Meta file not found for: {fileName}");
             }
+        }
+
+        // Obține toate fișierele din folderul sursă
+        string[] allFiles = Directory.GetFiles(packageFolder, "*.*", SearchOption.AllDirectories);
+
+        foreach (string file in allFiles)
+        {
+            string fileName = Path.GetFileName(file);
+            string destPath = Path.Combine(destinationFolder, fileName);
+
+            // Copiază fișierul și suprascrie dacă există deja
+            File.Copy(file, destPath, true);
+            Debug.Log($"Moved file: {fileName}");
         }
 
         // Reîmprospătează Asset Database
