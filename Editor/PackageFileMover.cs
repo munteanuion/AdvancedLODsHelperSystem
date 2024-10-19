@@ -20,7 +20,7 @@ public class PackageFileMover : AssetPostprocessor
             }
         }
 
-        AddDefineSymbol();
+        //AddDefineSymbol();
 
         void AddDefineSymbol()
         {
