@@ -11,6 +11,7 @@ using UnityEditor.Formats.Fbx.Exporter; //Need to import FBX Exporter package fr
 using System.IO;
 
 
+
 namespace AdvancedLODsHelperSystem
 {
     public static class AdvancedLODsHelperSystem
