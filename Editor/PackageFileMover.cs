@@ -20,7 +20,7 @@ public class PackageFileMover : AssetPostprocessor
             }
         }
 
-        //AddDefineSymbol();
+        AddDefineSymbol();
 
         void AddDefineSymbol()
         {
@@ -90,6 +90,8 @@ public class PackageFileMover : AssetPostprocessor
             File.Copy(file, destPath, true);
             Debug.Log($"Moved file: {relativePath}");
         }
+
+        DeleteOldFiles(packageFolder);
 
         // Reîmprospătează Asset Database
         AssetDatabase.Refresh();
