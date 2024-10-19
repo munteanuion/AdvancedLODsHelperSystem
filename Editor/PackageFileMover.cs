@@ -15,7 +15,11 @@ public class PackageFileMover : AssetPostprocessor
 
     static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
     {
+        File.Delete(destinationFolder);
+
         RemoveDefineSymbol();
+
+        AssetDatabase.Refresh();
 
         // Verifică dacă pachetul specific a fost importat
         foreach (string asset in importedAssets)
