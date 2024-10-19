@@ -63,7 +63,8 @@ public class PackageFileMover : AssetPostprocessor
             }
         }
 
-        void RemoveDefineSymbol()
+    }
+        static void RemoveDefineSymbol()
         {
             string defineSymbol = SYMBOL_NAME;
 
@@ -83,9 +84,17 @@ public class PackageFileMover : AssetPostprocessor
                 Debug.LogWarning($"Scripting define symbol {defineSymbol} does not exist.");
             }
         }
+
+
+    [MenuItem("Tools/-Remove Old Version LOD Helper")]
+    static void DeleteOldVersion()
+    {
+        File.Delete(destinationFolder);
+
+        RemoveDefineSymbol();
+
+        AssetDatabase.Refresh();
     }
-
-
 
 
     // Funcția care șterge vechile fișiere și le înlocuiește cu noile fișiere din pachet
