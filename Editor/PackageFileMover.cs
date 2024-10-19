@@ -5,6 +5,10 @@ using UnityEngine;
 public class PackageFileMover : AssetPostprocessor
 {
     const string PACKAGE_NAME = "com.munteanuion.lodhelper";
+    const string SYMBOL_NAME = "ADVANCED_LODS_HELPER_SYSTEM";
+
+    static string packageFolder = $"Library\\PackageCache\\{PACKAGE_NAME}\\Runtime\\AdvancedLODsHelperSystem"; // Calea din pachet
+    static string destinationFolder = "Assets\\Plugins\\AdvancedLODsHelperSystem"; // Calea în Assets
 
 
 
@@ -25,7 +29,7 @@ public class PackageFileMover : AssetPostprocessor
         void AddDefineSymbol()
         {
             // Define simbolul pe care vrei să-l adaugi
-            string defineSymbol = "ADVANCED_LODS_HELPER_SYSTEM";
+            string defineSymbol = SYMBOL_NAME;
 
             // Obține simbolurile de define curente
             string currentDefines = PlayerSettings.GetScriptingDefineSymbolsForGroup(BuildTargetGroup.Standalone);
@@ -54,9 +58,6 @@ public class PackageFileMover : AssetPostprocessor
     // Funcția care șterge vechile fișiere și le înlocuiește cu noile fișiere din pachet
     static void ReplaceOldFilesInAssetsFolder()
     {
-        string packageFolder = $"Library\\PackageCache\\{PACKAGE_NAME}\\Runtime\\AdvancedLODsHelperSystem"; // Calea din pachet
-        string destinationFolder = "Assets\\Plugins\\AdvancedLODsHelperSystem"; // Calea în Assets
-
         // Dacă există fișiere în folderul de destinație, le șterge
         if (Directory.Exists(destinationFolder))
         {
