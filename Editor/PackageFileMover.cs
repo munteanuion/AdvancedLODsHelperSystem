@@ -3,23 +3,27 @@ using System.IO;
 
 public class PackageFileMover : AssetPostprocessor
 {
+    const string PACKAGE_NAME = "com.munteanuion.lodhelper";
+
+
+
     static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
     {
         // Verifică dacă pachetul specific a fost importat
         foreach (string asset in importedAssets)
         {
-            if (asset.Contains("com.munteanuion.lodshelper"))
+            if (asset.Contains(PACKAGE_NAME))
             {
                 ReplaceOldFilesInAssetsFolder();
                 break;
             }
         }
     }
-
+    [MenuItem("Tools/Move Files to Assets Folder")]
     // Funcția care șterge vechile fișiere și le înlocuiește cu noile fișiere din pachet
     static void ReplaceOldFilesInAssetsFolder()
     {
-        string packageFolder = "Packages/com.munteanuion.lodshelper/Runtime/AdvancedLODsHelperSystem"; // Calea din pachet
+        string packageFolder = $"Library/PackageCache/{PACKAGE_NAME}/Runtime/AdvancedLODsHelperSystem"; // Calea din pachet
         string destinationFolder = "Assets/Plugins/AdvancedLODsHelperSystem"; // Calea în Assets
 
         // Dacă există fișiere în folderul de destinație, le șterge
