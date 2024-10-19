@@ -1,12 +1,12 @@
 {
-  "name": "com.munteanuion65.lodshelper",
-  "version": "1.0.0",
+  "name": "com.munteanuion.lodhelperMI",
+  "version": "1.0.1",
   "displayName": "LODs Helper",
-  "description": "This is a tool for Unity LODs Helper.",
+  "description": "This is a tool for Unity, LODs Helper.",
   "unity": "2021.3",
   "author": {
-    "name": "munteanuion65",
-    "url": "https://github.com/munteanuion65/UnityToolsGitHub.git#LODsHelper"
+    "name": "munteanuion",
+    "url": "https://github.com/munteanuion/AdvancedLODsHelperSystem"
   },
   "dependencies": {
     "com.unity.formats.fbx": "4.2.0"
