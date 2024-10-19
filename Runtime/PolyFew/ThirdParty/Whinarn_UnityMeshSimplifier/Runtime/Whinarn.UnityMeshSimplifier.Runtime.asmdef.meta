@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 77ccaf49895b0d64e87cd4b4faf83c49
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 154517
+  packageName: Mesh Optimizer
+  packageVersion: 
+  assetPath: Assets/_Imported Assets/PolyFew/ThirdParty/Whinarn_UnityMeshSimplifier/Runtime/Whinarn.UnityMeshSimplifier.Runtime.asmdef
+  uploadId: 0

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 357db0e904ae217429ee73402643842b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 154517
+  packageName: Mesh Optimizer
+  packageVersion: 
+  assetPath: Assets/_Imported Assets/PolyFew/ThirdParty/Whinarn_UnityMeshSimplifier/Runtime/Utility/MathHelper.cs
+  uploadId: 0

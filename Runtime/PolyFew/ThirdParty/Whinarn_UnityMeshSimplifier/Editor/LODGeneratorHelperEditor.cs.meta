@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: f9ac9095af6a98548ba6dd116c3e5136
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 154517
+  packageName: Mesh Optimizer
+  packageVersion: 
+  assetPath: Assets/_Imported Assets/PolyFew/ThirdParty/Whinarn_UnityMeshSimplifier/Editor/LODGeneratorHelperEditor.cs
+  uploadId: 0
