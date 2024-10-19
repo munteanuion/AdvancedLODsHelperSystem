@@ -99,7 +99,7 @@ namespace AdvancedLODsHelperSystem
                     // useEdgeSort: Oferă o reducere a poligoanelor mai precisă și de calitate superioară.
                     // recalculateNormals: Recalculează normalele mesh - ului pentru o iluminare corectă după optimizare.
                     // regardCurvature: Protejează detaliile de curbură și reduce poligoanele în zonele plane.
-                    polyFew1.dataContainer.reductionStrength = (100 / lodCount) * i;// Mathf.Abs(i - lodCount);//Mathf.Abs(lodGroup.GetLODs()[i].screenRelativeTransitionHeight * 100 - 100);
+                    polyFew1.dataContainer.reductionStrength = /*(100 / lodCount) * i;*/Mathf.Abs(lodGroup.GetLODs()[i].screenRelativeTransitionHeight * 100 - 100);
                     
                     polyFew1.dataContainer.preserveBorders = true;
                     polyFew1.dataContainer.useEdgeSort = true;
