@@ -68,42 +68,6 @@ public class PackageFileMover : AssetPostprocessor
             Directory.CreateDirectory(destinationFolder);
         }
 
-        // Copiază fișierele noi din pachet în Assets
-        foreach (string file in Directory.GetFiles(packageFolder))
-        {
-            string fileName = Path.GetFileName(file);
-            string destPath = Path.Combine(destinationFolder, fileName);
-
-            // Copiază fișierul și suprascrie dacă există deja
-            File.Copy(file, destPath, true);
-        }
-
-        // Mută fișierele de script și meta files
-        string[] files = Directory.GetFiles(packageFolder, "*.cs");
-
-        foreach (string file in files)
-        {
-            string fileName = Path.GetFileName(file);
-            string destFile = Path.Combine(destinationFolder, fileName);
-            string metaFile = file + ".meta"; // Fișierul meta corespunzător
-
-            // Mută fișierul script
-            File.Copy(file, destFile, true);  // Suprascrie fișierul existent
-            Debug.Log($"Moved script: {fileName}");
-
-            // Mută fișierul meta
-            if (File.Exists(metaFile))
-            {
-                string destMetaFile = Path.Combine(destinationFolder, fileName + ".meta");
-                File.Copy(metaFile, destMetaFile, true); // Suprascrie fișierul meta existent
-                Debug.Log($"Moved meta file: {fileName}.meta");
-            }
-            else
-            {
-                Debug.LogWarning($"Meta file not found for: {fileName}");
-            }
-        }
-
         // Obține toate fișierele din folderul sursă
         string[] allFiles = Directory.GetFiles(packageFolder, "*.*", SearchOption.AllDirectories);
 
