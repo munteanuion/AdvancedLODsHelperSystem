@@ -8,6 +8,7 @@ public class PackageFileMover : AssetPostprocessor
     const string SYMBOL_NAME = "ADVANCED_LODS_HELPER_SYSTEM";
 
     static string packageFolder = $"Library\\PackageCache\\{PACKAGE_NAME}\\Runtime\\AdvancedLODsHelperSystem"; // Calea din pachet
+    static string packageFolderThisScript = $"Library\\PackageCache\\{PACKAGE_NAME}\\Editor\\PackageFileMover.cs"; // Calea din pachet
     static string destinationFolder = "Assets\\Plugins\\AdvancedLODsHelperSystem"; // Calea în Assets
 
 
@@ -20,13 +21,19 @@ public class PackageFileMover : AssetPostprocessor
         foreach (string asset in importedAssets)
         {
             if (asset.Contains(PACKAGE_NAME))
-            {
+            { 
                 ReplaceOldFilesInAssetsFolder();
                 break;
             }
         }
 
         AddDefineSymbol();
+
+        File.Delete(packageFolderThisScript);
+
+        AssetDatabase.Refresh();
+
+
 
         void AddDefineSymbol()
         {
