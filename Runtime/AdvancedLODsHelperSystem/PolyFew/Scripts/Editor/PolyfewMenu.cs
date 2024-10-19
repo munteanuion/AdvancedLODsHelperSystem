@@ -1,4 +1,4 @@
-﻿#if UNITY_EDITOR
+﻿#if UNITY_EDITOR && ADVANCED_LODS_HELPER_SYSTEM
 
 using System.Collections.Generic;
 using System.IO;
