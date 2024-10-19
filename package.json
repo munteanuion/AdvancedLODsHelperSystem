@@ -1,8 +1,8 @@
 {
   "name": "com.munteanuion.lodhelper",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "displayName": "Advanced LODs Helper System",
-  "description": "This is a tool for Unity, Advanced LODs Helper System. Install location: Assets\\Plugins\\AdvancedLODsHelperSystem",
+  "description": "This is a tool for Unity, Advanced LODs Helper System. !Need to delete Scripting Define -> ADVANCED_LODS_HELPER_SYSTEM. Install location: Assets\\Plugins\\AdvancedLODsHelperSystem",
   "unity": "2021.3",
   "author": {
     "name": "munteanuion",
