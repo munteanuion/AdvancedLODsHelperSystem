@@ -28,7 +28,7 @@ public class PackageFileMover : AssetPostprocessor
 
         if (!isExistImportedAsset)
         {
-            File.Delete(destinationFolder);
+            Directory.Delete(destinationFolder);
 
             RemoveDefineSymbol();
 
@@ -113,7 +113,7 @@ public class PackageFileMover : AssetPostprocessor
     [MenuItem("Tools/-Remove Old Version LOD Helper")]
     static void DeleteOldVersion()
     {
-        File.Delete(destinationFolder);
+        Directory.Delete(destinationFolder);
 
         RemoveDefineSymbol();
 
