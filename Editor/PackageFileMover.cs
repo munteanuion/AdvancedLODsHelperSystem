@@ -30,7 +30,7 @@ public class PackageFileMover : AssetPostprocessor
         if (!isExistImportedAsset)
         {
             DeleteOldFiles(destinationFolder);
-            Directory.Delete(destinationFolder);
+            //Directory.Delete(destinationFolder);
 
             RemoveDefineSymbol();
 
@@ -41,7 +41,7 @@ public class PackageFileMover : AssetPostprocessor
 #if !SYMBOL_NAME
 
         DeleteOldFiles(destinationFolder);
-        Directory.Delete(destinationFolder);
+        //Directory.Delete(destinationFolder);
 
         RemoveDefineSymbol();
 
@@ -117,7 +117,7 @@ public class PackageFileMover : AssetPostprocessor
     static void DeleteOldVersion()
     {
         DeleteOldFiles(destinationFolder);
-        Directory.Delete(destinationFolder);
+        //Directory.Delete(destinationFolder);
 
         RemoveDefineSymbol();
 
