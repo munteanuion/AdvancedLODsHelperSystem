@@ -15,7 +15,7 @@ public class PackageFileMover : AssetPostprocessor
 
     static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
     {
-#if !SYMBOL_NAME
+#if !ADVANCED_LODS_HELPER_SYSTEM
 
         if (Directory.Exists(destinationFolder)) return;
 
