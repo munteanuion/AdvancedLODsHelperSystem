@@ -56,7 +56,7 @@ public class PackageFileMover : AssetPostprocessor
 
         AddDefineSymbol();
 
-        File.Delete(packageFolderThisScript);
+        //File.Delete(packageFolderThisScript);
 
         AssetDatabase.Refresh();
 
