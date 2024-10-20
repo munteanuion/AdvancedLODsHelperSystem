@@ -17,6 +17,8 @@ public class PackageFileMover : AssetPostprocessor
     {
 #if !SYMBOL_NAME
 
+        if (Directory.Exists(destinationFolder)) return;
+
         DeleteOldFiles(destinationFolder);
         //Directory.Delete(destinationFolder);
 
