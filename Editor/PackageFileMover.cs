@@ -94,7 +94,7 @@ public class PackageFileMover : AssetPostprocessor
     static void DeleteOldVersion()
     {
         DeleteOldFiles(destinationFolder);
-        //Directory.Delete(destinationFolder);
+        Directory.Delete(destinationFolder);
 
         RemoveDefineSymbol();
 
