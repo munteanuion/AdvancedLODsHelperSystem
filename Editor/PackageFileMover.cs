@@ -171,6 +171,8 @@ public class PackageFileMover : AssetPostprocessor
     // Funcția care șterge toate fișierele din folderul de destinație
     static void DeleteOldFiles(string folderPath)
     {
+        if (!Directory.Exists(folderPath)) return;
+
         foreach (string file in Directory.GetFiles(folderPath))
         {
             File.Delete(file);
