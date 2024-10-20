@@ -15,29 +15,6 @@ public class PackageFileMover : AssetPostprocessor
 
     static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
     {
-#if SYMBOL_NAME
-        bool isExistImportedAsset = false;
-        
-        foreach (string asset in importedAssets)
-        {
-            if (asset.Contains(PACKAGE_NAME))
-            {
-                isExistImportedAsset = true;
-                break;
-            }
-        }
-
-        if (!isExistImportedAsset)
-        {
-            DeleteOldFiles(destinationFolder);
-            //Directory.Delete(destinationFolder);
-
-            RemoveDefineSymbol();
-
-            AssetDatabase.Refresh();
-        }
-#endif
-
 #if !SYMBOL_NAME
 
         DeleteOldFiles(destinationFolder);
@@ -113,7 +90,7 @@ public class PackageFileMover : AssetPostprocessor
         }
 
 
-    [MenuItem("Tools/-Remove Old Version LOD Helper")]
+    [MenuItem("Tools/Remove/Remove Old Version LOD Helper")]
     static void DeleteOldVersion()
     {
         DeleteOldFiles(destinationFolder);
