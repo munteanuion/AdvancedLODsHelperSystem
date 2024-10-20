@@ -1,6 +1,6 @@
 {
   "name": "com.munteanuion.lodhelper",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "displayName": "Advanced LODs Helper System",
   "description": "Support Telegram: @MunteanuIon. Before update this package need exec Tools\\Remove\\Remove Old Version LOD Helper. !Need to delete Scripting Define -> ADVANCED_LODS_HELPER_SYSTEM. Install location: Assets\\Plugins\\AdvancedLODsHelperSystem",
   "unity": "2021.3",
