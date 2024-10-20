@@ -15,6 +15,7 @@ public class PackageFileMover : AssetPostprocessor
 
     static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
     {
+#if SYMBOL_NAME
         bool isExistImportedAsset = false;
         
         foreach (string asset in importedAssets)
@@ -35,7 +36,7 @@ public class PackageFileMover : AssetPostprocessor
 
             AssetDatabase.Refresh();
         }
-
+#endif
 
 #if !SYMBOL_NAME
 
