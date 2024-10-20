@@ -15,6 +15,29 @@ public class PackageFileMover : AssetPostprocessor
 
     static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
     {
+        bool isExistImportedAsset = false;
+        
+        foreach (string asset in importedAssets)
+        {
+            if (asset.Contains(PACKAGE_NAME))
+            {
+                isExistImportedAsset = true;
+                break;
+            }
+        }
+
+        if (!isExistImportedAsset)
+        {
+            File.Delete(destinationFolder);
+
+            RemoveDefineSymbol();
+
+            AssetDatabase.Refresh();
+        }
+
+
+#if !SYMBOL_NAME
+
         File.Delete(destinationFolder);
 
         RemoveDefineSymbol();
@@ -37,6 +60,7 @@ public class PackageFileMover : AssetPostprocessor
 
         AssetDatabase.Refresh();
 
+#endif
 
 
         void AddDefineSymbol()
