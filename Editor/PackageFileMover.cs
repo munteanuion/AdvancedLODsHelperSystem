@@ -45,11 +45,11 @@ public class PackageFileMover : AssetPostprocessor
 #endif
 
 #if ADVANCED_LODS_HELPER_SYSTEM
-        DeleteOldFiles(destinationFolder);
-        if (Directory.Exists(destinationFolder))
-            Directory.Delete(destinationFolder);
-        if (File.Exists(destinationFolder + ".meta"))
-            File.Delete(destinationFolder + ".meta");
+        DeleteOldFiles(packageFolder);
+        if (Directory.Exists(packageFolder))
+            Directory.Delete(packageFolder);
+        if (File.Exists(packageFolder + ".meta"))
+            File.Delete(packageFolder + ".meta");
 #endif
 
         void AddDefineSymbol()
