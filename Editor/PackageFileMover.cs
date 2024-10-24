@@ -50,9 +50,6 @@ public class PackageFileMover : AssetPostprocessor
             Directory.Delete(destinationFolder);
         if (File.Exists(destinationFolder + ".meta"))
             File.Delete(destinationFolder + ".meta");
-
-        AssetDatabase.Refresh();
-
 #endif
 
         void AddDefineSymbol()
