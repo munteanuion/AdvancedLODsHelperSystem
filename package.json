@@ -1,8 +1,8 @@
 {
   "name": "com.munteanuion.lodhelper",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "displayName": "Advanced LODs Helper System",
-  "description": "Support Telegram: @MunteanuIon. \n\n!Before update or delete this package need exec Tools\\Remove\\Remove Old Version LOD Helper. \n\n!Before first install need to delete Scripting Define -> ADVANCED_LODS_HELPER_SYSTEM. \n\nInstall location: Assets\\Plugins\\AdvancedLODsHelperSystem",
+  "description": "Support Telegram: @MunteanuIon. \n\n If you have error when clone project on another pc, I recommend to delete from package manager this package because main functional is moved in Assets \n\n!Before update or delete this package need exec Tools\\Remove\\Remove Old Version LOD Helper. \n\n!Before first install need to delete Scripting Define -> ADVANCED_LODS_HELPER_SYSTEM. \n\nInstall location: Assets\\Plugins\\AdvancedLODsHelperSystem",
   "unity": "2021.3",
   "author": {
     "name": "munteanuion",
