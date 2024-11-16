@@ -6,7 +6,9 @@
         "GUID:77ccaf49895b0d64e87cd4b4faf83c49",
         "GUID:0f9e8f73c69964f1e8176f9a0b86f9b2"
     ],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "tvOS"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
