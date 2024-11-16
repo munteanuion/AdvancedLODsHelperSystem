@@ -1,0 +1,16 @@
+{
+    "name": "IgnoreThisLODHelper",
+    "rootNamespace": "",
+    "references": [],
+    "includePlatforms": [
+        "tvOS"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
